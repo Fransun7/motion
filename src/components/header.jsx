@@ -1,13 +1,18 @@
 import React from "react";
 
-const Header = ({ searchTerm, setSearchTerm, selectedGenre, setSelectedGenre }) => {
+const Header = ({
+  searchTerm,
+  setSearchTerm,
+  selectedGenre,
+  setSelectedGenre,
+}) => {
   const controlledKey = (e) => {
     if (e.key === "enter") {
       e.preventDefault();
     }
   };
 
-  const genres =["All", "Action", "Sci-Fi", "Drama", "Horror"];
+  const genres = ["All", "Action", "Sci-Fi", "Drama", "Horror"];
 
   return (
     <header className="bg-black text-white p-4 mg-0 border-2 border-black border-b-neutral-900">
@@ -42,7 +47,7 @@ const Header = ({ searchTerm, setSearchTerm, selectedGenre, setSelectedGenre }) 
               <button
                 key={genre}
                 className={`w-full px-4 py-2 hover:bg-green-800 ${
-                  selectedGenre === genre ? "bg-gray-950" : ""
+                  selectedGenre === genre ? "active" : ""
                 }`}
                 onClick={() => setSelectedGenre(genre)}
               >
@@ -50,7 +55,6 @@ const Header = ({ searchTerm, setSearchTerm, selectedGenre, setSelectedGenre }) 
               </button>
             ))}
           </div>
-
         </div>
       </div>
     </header>
